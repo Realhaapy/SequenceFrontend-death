@@ -51,8 +51,12 @@ const Temp = () => {
             email: valueEmail,
             password: valuePs,
         }
+        // try {
         const signUpmethod = await axios.post(url, payload)
         setRes(signUpmethod.data.result)
+        // } catch (e) {
+        //     e.printStackTrace()
+        // }
     }
 
     return (

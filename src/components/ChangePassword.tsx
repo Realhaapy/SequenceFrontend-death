@@ -64,7 +64,7 @@ const Temp = () => {
                     </form>
                 </div>
                 <div className='part1'>
-                    Password
+                    New Password
                     <form onSubmit={handleSubmit}>
                         <input
                             className='box'
