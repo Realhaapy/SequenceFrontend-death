@@ -41,7 +41,6 @@ const Temp = () => {
             alert('input password')
         } else {
             await loginUp()
-            Router.push('/work')
         }
     }
 
@@ -51,12 +50,13 @@ const Temp = () => {
             email: valueEmail,
             password: valuePs,
         }
-        // try {
-        const signUpmethod = await axios.post(url, payload)
-        setRes(signUpmethod.data.result)
-        // } catch (e) {
-        //     e.printStackTrace()
-        // }
+        const signUpMethod = await axios.post(url, payload)
+        setRes(signUpMethod.data.result)
+        if (signUpMethod.data.error !== true) {
+            Router.push('/work')
+        } else {
+            alert(signUpMethod.data.message)
+        }
     }
 
     return (

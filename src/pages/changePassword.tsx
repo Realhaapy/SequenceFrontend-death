@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import ChangePassword from '../components/ChangePassword'
+import ChangePassword from '../components/login/ChangePassword'
 import Headers from '../components/Headers&Footer/Headers'
 import Footer from '../components/Headers&Footer/Footer'
 

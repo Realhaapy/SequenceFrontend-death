@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Delte from '../components/DeleteMain'
+import Delte from '../components/login/DeleteMain'
 import Headers from '../components/Headers&Footer/Headers'
 import Footer from '../components/Headers&Footer/Footer'
 

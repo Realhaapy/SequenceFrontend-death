@@ -55,9 +55,6 @@ const Temp = () => {
             setState('confirm password')
         } else {
             await signUp()
-            await authenticationUp()
-            alert('Please complete the authentication.')
-            Router.push('/login')
         }
     }
 
@@ -70,6 +67,11 @@ const Temp = () => {
             password: valuePs,
         }
         const signUpmethod = await axios.post(url, payload)
+        if (signUpmethod.data.error !== true) {
+            await authenticationUp()
+        } else {
+            alert(signUpmethod.data.message)
+        }
     }
 
     const authenticationUp = async () => {
@@ -78,6 +80,12 @@ const Temp = () => {
             email: valueEmail,
         }
         const authenticationUpmethod = await axios.post(url, payload)
+        if (authenticationUpmethod.data.error !== true) {
+            alert('Please complete the authentication.')
+            Router.push('/login')
+        } else {
+            alert(authenticationUpmethod.data.message)
+        }
     }
 
     return (

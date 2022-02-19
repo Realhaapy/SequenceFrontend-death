@@ -26,7 +26,6 @@ const Temp = () => {
 
     const handleClickDlete = async () => {
         await Delete()
-        Router.push('/notice')
     }
     const handleClickRevise = async () => {
         Router.push(`/noticeRevise?idx=${valueIdx}`)
@@ -46,6 +45,11 @@ const Temp = () => {
             },
         }
         const deleteUpmethod = await axios.delete(url, config)
+        if (deleteUpmethod.data.error !== true) {
+            Router.push('/notice')
+        } else {
+            alert(deleteUpmethod.data.message)
+        }
     }
 
     return (

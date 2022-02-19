@@ -36,7 +36,6 @@ const Temp = () => {
     }
     const handleClickUpdate = async (e: any) => {
         await revise()
-        Router.push(`/noticeExaple?idx=${valueIdx}`)
     }
 
     const revise = async () => {
@@ -52,7 +51,12 @@ const Temp = () => {
             },
         }
 
-        const signUpmethod = await axios.put(url, payload, config)
+        const signUpMethod = await axios.put(url, payload, config)
+        if (signUpMethod.data.error !== true) {
+            Router.push(`/noticeExaple?idx=${valueIdx}`)
+        } else {
+            alert(signUpMethod.data.message)
+        }
     }
 
     return (

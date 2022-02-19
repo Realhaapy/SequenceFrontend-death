@@ -20,8 +20,6 @@ const Temp = () => {
             setState('input email')
         } else {
             await resetPassword()
-            alert('비밀번호가 변경되었습니다')
-            Router.push('/login')
         }
     }
 
@@ -31,6 +29,12 @@ const Temp = () => {
             email: valueEmail,
         }
         const signUpmethod = await axios.post(url, payload)
+        if (signUpmethod.data.error !== true) {
+            alert('Change password')
+            Router.push('/login')
+        } else {
+            alert(signUpmethod.data.message)
+        }
     }
 
     return (

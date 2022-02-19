@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ForgotMain } from './login/loginConcept/LoginStyles'
+import { ForgotMain } from './loginConcept/LoginStyles'
 import { useCookies } from 'react-cookie'
 import axios from 'axios'
 import Router from 'next/router'
@@ -36,9 +36,6 @@ const Temp = () => {
             setState('write down')
         } else {
             await deleteID()
-            removeCookie(['token'])
-            alert('successfully deleted ID.')
-            Router.push('/work')
         }
     }
 
@@ -50,8 +47,14 @@ const Temp = () => {
                 authorization: cookies.token,
             },
         }
-        console.log(config)
         const deleteUpmethod = await axios.delete(url, config)
+        if (deleteUpmethod.data.error !== true) {
+            removeCookie(['token'])
+            alert('successfully deleted ID.')
+            Router.push('/work')
+        } else {
+            alert(deleteUpmethod.data.message)
+        }
     }
 
     return (

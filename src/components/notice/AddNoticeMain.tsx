@@ -32,7 +32,6 @@ const Temp = () => {
     }
     const handleClick = async () => {
         await postUp()
-        Router.push('/notice')
     }
 
     const postUp = async () => {
@@ -49,6 +48,11 @@ const Temp = () => {
             },
         }
         const postUpmethod = await axios.post(url, payload, config)
+        if (postUpmethod.data.error !== true) {
+            Router.push('/notice')
+        } else {
+            alert(postUpmethod.data.message)
+        }
     }
 
     return (

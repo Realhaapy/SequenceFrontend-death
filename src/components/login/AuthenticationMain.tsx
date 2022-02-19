@@ -20,6 +20,9 @@ const Temp = () => {
             code: valuecode,
         }
         const authenticationUpmethod = await axios.post(url, payload)
+        if (authenticationUpmethod.data.result === true) {
+            setMent('verified')
+        }
     }
 
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { ForgotMain } from './login/loginConcept/LoginStyles'
+import { ForgotMain } from './loginConcept/LoginStyles'
 import { useCookies } from 'react-cookie'
 import axios from 'axios'
 import Router from 'next/router'
@@ -29,9 +29,6 @@ const Temp = () => {
             setState('input password')
         } else {
             await resetPassword()
-            alert('Change password')
-            removeCookie(['token'])
-            Router.push('/work')
         }
     }
 
@@ -42,6 +39,13 @@ const Temp = () => {
             password: valuePassword,
         }
         const changeUpmethod = await axios.put(url, payload)
+        if (changeUpmethod.data.error !== true) {
+            alert('Change password')
+            removeCookie(['token'])
+            Router.push('/work')
+        } else {
+            alert(changeUpmethod.data.message)
+        }
     }
 
     return (
