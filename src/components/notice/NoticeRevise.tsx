@@ -40,7 +40,7 @@ const Temp = () => {
     }
 
     const revise = async () => {
-        const url = `http://api.sunwoocoding.com/Contents/${valueIdx}`
+        const url = `https://api.sunwoocoding.com/Contents/${valueIdx}`
         const payload = {
             title: valueTitle,
             contents: valueContents,
