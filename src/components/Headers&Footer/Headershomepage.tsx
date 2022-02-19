@@ -33,11 +33,13 @@ const Temp = () => {
 
     return (
         <Headhomapage>
-            <img
-                id='homepage'
-                src='https://sunwoocodingbuckets.s3.ap-northeast-2.amazonaws.com/Homepage.png'
-                alt='homepage'
-            />
+            <video id='homepage' autoPlay muted loop>
+                <source
+                    src='https://sunwoocodingbuckets.s3.ap-northeast-2.amazonaws.com/GOMCAM+20220220_0755570699.mp4'
+                    type='video/mp4'
+                />
+            </video>
+
             <div className='header'>
                 <Link href='/work'>
                     <img

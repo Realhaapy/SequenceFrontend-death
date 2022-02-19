@@ -53,6 +53,7 @@ export const Headhomapage = styled.div`
         position: fixed;
         width: 100%;
         height: 100%;
+        background-color: #5d768c;
     }
     #Sequence {
         flex: 1.3;
