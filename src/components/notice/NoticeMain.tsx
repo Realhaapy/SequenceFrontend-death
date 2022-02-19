@@ -14,7 +14,7 @@ const Temp = () => {
     }, [page])
 
     const ShowAllContents = async () => {
-        const url = `http://api.sunwoocoding.com/contents/?limit=9&page=${page}`
+        const url = `https://api.sunwoocoding.com/contents/?limit=9&page=${page}`
         const allContents = await axios.get(url)
         setDataWithImage(allContents.data.result.slice(0, 4))
         setDataWithoutImage(allContents.data.result.slice(4))

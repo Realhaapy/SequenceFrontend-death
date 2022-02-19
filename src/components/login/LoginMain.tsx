@@ -45,14 +45,13 @@ const Temp = () => {
     }
 
     const loginUp = async () => {
-        const url = 'http://api.sunwoocoding.com/login'
+        const url = 'https://api.sunwoocoding.com/login'
         const payload = {
             email: valueEmail,
             password: valuePs,
         }
         const signUpmethod = await axios.post(url, payload)
         setRes(signUpmethod.data.result)
-        console.log(cookies)
     }
 
     return (

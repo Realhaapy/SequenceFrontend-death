@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { CreateMain } from './loginConcept/LoginStyles'
 import axios from 'axios'
 import Router from 'next/router'
-import Link from 'next/link'
 
 const Temp = () => {
     const [valueEmail, setValueEmail] = useState('')
@@ -63,7 +62,7 @@ const Temp = () => {
     }
 
     const signUp = async () => {
-        const url = 'http://api.sunwoocoding.com/users'
+        const url = 'https://api.sunwoocoding.com/users'
         const payload = {
             email: valueEmail,
             nickname: valueNickname,
@@ -74,7 +73,7 @@ const Temp = () => {
     }
 
     const authenticationUp = async () => {
-        const url = 'http://api.sunwoocoding.com/authorization/mail'
+        const url = 'https://api.sunwoocoding.com/authorization/mail'
         const payload = {
             email: valueEmail,
         }

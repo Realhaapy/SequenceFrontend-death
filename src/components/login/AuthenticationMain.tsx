@@ -15,7 +15,7 @@ const Temp = () => {
     }, [valuecode])
 
     const authentication = async () => {
-        const url = `http://api.sunwoocoding.com/authorization/check`
+        const url = `https://api.sunwoocoding.com/authorization/check`
         const payload = {
             code: valuecode,
         }

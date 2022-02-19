@@ -36,7 +36,7 @@ const Temp = () => {
     }
 
     const postUp = async () => {
-        const url = 'http://api.sunwoocoding.com/contents'
+        const url = 'https://api.sunwoocoding.com/contents'
         const payload = new FormData()
         payload.append('title', valueTitle)
         payload.append('contents', valueContents)

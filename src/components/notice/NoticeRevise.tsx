@@ -18,7 +18,7 @@ const Temp = () => {
     }, [])
 
     const ShowContents = async () => {
-        const url = `http://api.sunwoocoding.com/contents/${valueIdx}`
+        const url = `https://api.sunwoocoding.com/contents/${valueIdx}`
         const postUpmethod = await axios.get(url)
         setvalueTitle(postUpmethod.data.result[0].title)
         setValueContents(postUpmethod.data.result[0].contents)

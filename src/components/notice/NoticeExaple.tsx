@@ -36,7 +36,7 @@ const Temp = () => {
     }
 
     const Delete = async () => {
-        const url = `http://api.sunwoocoding.com/contents/${valueIdx}`
+        const url = `https://api.sunwoocoding.com/contents/${valueIdx}`
         let config = {
             title: valueTitle,
             contents: valueContents,

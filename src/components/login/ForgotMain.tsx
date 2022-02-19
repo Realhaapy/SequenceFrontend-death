@@ -6,7 +6,6 @@ import Router from 'next/router'
 const Temp = () => {
     const [valueEmail, setvalueEmail] = useState('')
     const [state, setState] = useState('Reset ▶')
-    const [url, setUrl] = useState('')
 
     const handleSubmitEmail = (e: any) => {
         e.preventDefault()
@@ -27,7 +26,7 @@ const Temp = () => {
     }
 
     const resetPassword = async () => {
-        const url = 'http://api.sunwoocoding.com/password/reset'
+        const url = 'https://api.sunwoocoding.com/password/reset'
         const payload = {
             email: valueEmail,
         }

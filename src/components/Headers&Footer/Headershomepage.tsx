@@ -14,7 +14,7 @@ const Temp = () => {
     }, [cookies])
 
     const checkUp = async () => {
-        const url = 'http://api.sunwoocoding.com/checkToken'
+        const url = 'https://api.sunwoocoding.com/checkToken'
         const payload = { body: 'hi' }
         let config = {
             headers: {
