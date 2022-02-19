@@ -6,7 +6,7 @@
     "scripts": {
         "build": "next build",
         "dev": "next dev",
-        "start": "next start",
+        "start": "node_modules/next/dist/bin/next start -p $PORT",
         "export": "next export"
     },
     "author": "",
