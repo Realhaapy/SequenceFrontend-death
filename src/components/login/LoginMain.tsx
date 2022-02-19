@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { LoginMain } from './loginConcept/LoginStyles'
 import axios from 'axios'
 import { useCookies } from 'react-cookie'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const Temp = () => {
@@ -10,6 +10,7 @@ const Temp = () => {
     const [valuePs, setValuePs] = useState('')
     const [res, setRes] = useState(null)
     const [cookies, setCookie, removeCookie] = useCookies([])
+    const Router = useRouter()
 
     useEffect(() => {
         if (res) {

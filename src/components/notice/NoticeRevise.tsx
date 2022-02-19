@@ -14,7 +14,6 @@ const Temp = () => {
 
     useEffect(() => {
         ShowContents()
-        console.log(valueIdx)
     }, [])
 
     const ShowContents = async () => {
