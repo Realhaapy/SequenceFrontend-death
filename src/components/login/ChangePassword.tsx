@@ -7,6 +7,7 @@ import Router from 'next/router'
 const Temp = () => {
     const [valueEmail, setvalueEmail] = useState('')
     const [valuePassword, setvaluePassword] = useState('')
+    const [valueRePassword, setvalueRePassword] = useState('')
     const [state, setState] = useState('Change password ▶')
     const [cookies, setCookie, removeCookie] = useCookies([])
 
@@ -21,11 +22,16 @@ const Temp = () => {
     const handleChangePassword = (e: any) => {
         setvaluePassword(e.target.value)
     }
+    const handleChangeRePassword = (e: any) => {
+        setvalueRePassword(e.target.value)
+    }
 
     const handleClick = async () => {
         if (valueEmail === '') {
             setState('input email')
         } else if (valuePassword === '') {
+            setState('input password')
+        } else if (valueRePassword === '') {
             setState('input password')
         } else {
             await resetPassword()
@@ -37,8 +43,10 @@ const Temp = () => {
         const payload = {
             email: valueEmail,
             password: valuePassword,
+            rePassword: valueRePassword,
         }
         const changeUpmethod = await axios.put(url, payload)
+
         if (changeUpmethod.data.error !== true) {
             alert('Change password')
             removeCookie(['token'])
@@ -68,7 +76,7 @@ const Temp = () => {
                     </form>
                 </div>
                 <div className='part1'>
-                    New Password
+                    New password
                     <form onSubmit={handleSubmit}>
                         <input
                             className='box'
@@ -80,6 +88,20 @@ const Temp = () => {
                         ></input>
                     </form>
                 </div>
+                <div className='part1'>
+                    Password check
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            className='box'
+                            type='password'
+                            value={valueRePassword}
+                            name='input'
+                            onChange={handleChangeRePassword}
+                            placeholder='Password'
+                        ></input>
+                    </form>
+                </div>
+
                 <button className='button part1' onClick={handleClick}>
                     {state}
                 </button>
